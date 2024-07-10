@@ -7,10 +7,6 @@ body {
     font-family: Roboto;
 }
 
-.sections {
-
-}
-
 section {
     min-height: 100vh;
     scroll-margin-top: 36px;  /* Use the height of the nav */
