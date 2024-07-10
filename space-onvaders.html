@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		#board {
+			background: black;
+			position: relative;
+			width: 1000px;
+			height: 800px;
+			overflow: hidden;
+		}
+
+		#ship,
+		#board > div > div {
+			position: absolute;
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+		}
+
+		.enemy {
+			width: 80px;
+			height: 80px;
+			background-image: url(enemy.png);
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.ship {
+			width: 80px;
+			height: 80px;
+			bottom: 40px;
+			background-image: url(ship1.png);
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.bullet {
+			background: white;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="board">
+		<div id="enemies">
+			
+		</div>
+		<div id="bullets">
+			
+		</div>
+
+		<div class="ship" id="ship"></div>
+	</div>
+
+	<script type="text/javascript">
+		const $enemies = document.getElementById('enemies');
+		const $bullets = document.getElementById('bullets');
+		const $board = document.getElementById('board');
+		const enemies = [];
+		const bullets = [];
+		const bulletSpeed = 400;
+		const enemySpeed = 300;
+
+		const board = {
+			width: 1000,
+			height: 800,
+			margin: 40,
+		};
+
+		const eCols = 5;
+		const eRows = 3;
+
+		const ship = {
+			x: 30,
+			y: 760,
+			$el: document.getElementById('ship'),
+		};
+
+		const spawnEnemy = (x, y, col) => {
+			const enemy = {
+				x,
+				y,
+				col,
+			};
+
+			let downAmount = 80;
+			let phase = 0;
+
+			enemy.update = (delta) => {
+				switch(phase) {
+					case 0:
+						enemy.x += enemySpeed * delta;
+						if (enemy.x >= board.width - (eCols - col) * 80) {
+							phase++;
+							downAmount = 80;
+						}
+						break;
+
+					case 1:
+					case 3:
+						enemy.y += enemySpeed * delta;
+						downAmount -= enemySpeed * delta;
+						if (downAmount < 0) {
+							phase++;
+
+							if (phase > 3) phase = 0;
+						}
+						break;
+
+					case 2:
+						enemy.x -= enemySpeed * delta;
+						if (enemy.x <= col * 80 + 80) {
+							phase++;
+							downAmount = 80;
+						}
+						break;
+				}
+
+				enemy.$el.style.top = enemy.y + 'px';
+				enemy.$el.style.left = enemy.x + 'px';
+			};
+
+			enemy.kill = () => {
+				enemies.splice(enemies.indexOf(enemy), 1);
+				enemy.$el.remove();
+			};
+
+			const $enemy = document.createElement('div');
+			$enemy.classList.add('enemy');
+			enemy.$el = $enemy;
+			$enemy.style.top = enemy.y + 'px';
+			$enemy.style.left = enemy.x + 'px';
+
+			$enemies.append($enemy);
+			enemies.push(enemy);
+		};
+
+		[...Array(eCols).keys()]
+			.forEach(col => [...Array(eRows).keys()]
+				.forEach(row =>  {
+					spawnEnemy(40 + col * 80, 40 + row * 80, col);
+
+		}));
+
+		$board.addEventListener('mousemove', e => {
+			ship.x = e.offsetX;
+		});
+
+		$board.addEventListener('click', e => {
+			const bullet = {
+				x: ship.x,
+				y: ship.y - 100,
+			};
+
+			bullet.kill = () => {
+				bullets.splice(bullets.indexOf(bullet), 1);
+				bullet.$el.remove();
+			};
+
+			bullet.update = (delta) => {
+				bullet.y -= bulletSpeed * delta;
+
+				if (bullet.y < -40) {
+					bullet.kill();
+					return;
+				}
+
+				bullet.$el.style.top = bullet.y + 'px';
+				bullet.$el.style.left = bullet.x + 'px';
+			};
+
+			const $bullet = document.createElement('div');
+			$bullet.classList.add('bullet');
+			bullet.$el = $bullet;
+
+			$bullets.append($bullet);
+			bullets.push(bullet);
+		});
+
+		const distanceBetween = (a, b) => {
+			const d1 = a.x - b.x;
+			const d2 = a.y - b.y;
+
+			return Math.sqrt(d1 * d1 + d2 * d2);
+		};
+
+		const checkCollisions = () => {
+			for (var i = 0; i < enemies.length; i++) {
+				const e = enemies[i];
+
+				for (var j = 0; j < bullets.length; j++) {
+					const b = bullets[j];
+
+					if (distanceBetween(e, b) < 35) {
+						b.kill();
+						e.kill();
+
+						j--;
+						i--;
+
+						break;
+					}
+				}
+			}
+		};
+
+		let now = Date.now();
+		let last = now;
+		let delta;
+
+		const update = () => {
+			now = Date.now();
+			delta = (now - last) / 1000;
+			last = now;
+
+			ship.$el.style.left = ship.x + 'px';
+			bullets.forEach(b => b.update(delta));
+			enemies.forEach(e => e.update(delta));
+
+			checkCollisions();
+
+			requestAnimationFrame(update);
+		};
+
+		update();
+
+	</script>
+
+</body>
+</html>
