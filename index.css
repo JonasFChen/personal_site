@@ -7,23 +7,396 @@ body {
     font-family: Roboto;
 }
 
+h2 {
+    color: #299bff;
+    font-size: 2.5rem;
+    font-weight: 1000;
+      
+    text-align: center;
+    padding: 20px;
+  }
+
+h3 {
+    color: #299bff;
+    font-size: 1.5rem;
+    font-weight: 1000;
+      
+    padding: 20px 0;
+}
+
 section {
     min-height: 100vh;
-    scroll-margin-top: 36px;  /* Use the height of the nav */
+    scroll-margin-top: 58px;  /* Use the height of the nav */
 
 }
 
 section:nth-child(1) { background: red;}
 section:nth-child(2) { background: var(--blue);}
-section:nth-child(3) { background: yellow;}
+section:nth-child(3) { background: rgb(250, 250, 250);}
 section:nth-child(4) { background: green;}
 section:nth-child(5) { background: purple;}
 section:nth-child(6) { background: greenyellow;}
-section:nth-child(7) { background: darkcyan;}
+section:nth-child(7) { background: rgb(250, 250, 250);}
 
 nav {
+    display: flex;
     position: sticky;
     top: 0;
-    background: #fff;
-    padding: 10px 20px;
+    background: #3a3a3a;
+    padding: 10px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a {
+    padding: 10px 20px; 
+    border-radius: 15px;
+
+    color: rgb(245, 245, 245);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color:#299bff;
+    transition: 0.3s;
+}
+
+.burger-menu-icon {
+    display: none;
+}
+
+.content-container {
+    padding: 3rem 7rem;
+}
+
+.grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.about-me-mission {
+    display: flex;
+    width: 100%;
+}
+
+.about-me-mission div:first-child {
+    padding-right: 20px;
+    width: 50%
+}
+
+.about-me-mission div:nth-child(2) {
+    width: 50%
+}
+
+.photo-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+
+.photo-grid-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.photo-grid-container a img:hover {
+    width: 380px;
+}
+
+.photo-grid-container a img {
+    transition: 1s;
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.hobby-videoGame-item { grid-area: vd; }
+.hobby-pc-item { grid-area: pc; }
+.hobby-tech-item { grid-area: tc; }
+.hobby-car-item { grid-area: cr; }
+.hobby-eng-item { grid-area: en; }
+.hobby-tp-item { grid-area: tp; }
+.hobby-coaster-item { grid-area: rc; }
+.hobby-photo-item { grid-area: ph; }
+.hobby-wo-item { grid-area: wo; }
+.hobby-bike-item { grid-area: bk; }
+.hobby-main-item { grid-area: ho; }
+.hobby-music-item { grid-area: mu; }
+.hobby-aviation-item { grid-area: av; }
+
+.hobbies-grid-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: 
+    "wo pc pc pc en en"
+    "wo vd vd vd tc tc"
+    "tp rc ho ho tc tc"
+    "tp rc ho ho bk bk"
+    "mu mu mu cr cr av"
+    "ph ph ph cr cr av";
+
+    gap: 10px;
+}
+
+.hobby-grid-item {
+    display: flex;
+    position: relative;
+    background-color: rgb(225, 225, 225);
+    border-radius: 20px;
+    padding: 20px;
+
+    transition: 2s;
+
+    align-items: center;
+    justify-content: center;;
+}
+
+.hobby-grid-item a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.hobby-main-item {
+    background-color:rgb(0, 173, 231);
+}
+
+.hobby-main-item a p{
+    color: white;
+    font-weight: 600;
+}
+
+.hobby-title-center {
+    color: white;
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.hobby-car-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/photography/lambofront.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-car-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-videoGame-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/video-game-background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-videoGame-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-coaster-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/rollercoaster_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-coaster-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-bike-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/bike_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-bike-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-tech-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/technology_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-tech-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-pc-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/computer_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-pc-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-eng-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/eng-background.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-eng-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-tp-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/tp_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-tp-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-photo-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/photo_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-photo-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-wo-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/gym_background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-wo-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-music-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img//backgrounds/music_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-music-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.hobby-aviation-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/aviation_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hobby-aviation-item h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.pop-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 800px;
+    width: 800px;
+    padding: 50px;
+    background: rgb(210, 210, 210);
+    border-radius: 20px;
+}
+
+
+/* All mobile CSS goes in here */
+@media screen and (max-width: 826px) {
+    nav a {
+        display: none;
+    }
+
+    nav {
+        justify-content: end;
+    }
+
+    .burger-menu-icon {
+        display: flex;
+        padding: 4px;
+        margin: 0px;
+    }
+
+    .burger-menu-icon img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .expanded-menu {
+        display: block;
+        padding-top: 50px;
+    }
+
+    .expanded-menu a {
+        display: block;
+    }
+
+    .expanded-menu .burger-menu-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .photo-grid-container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .photo-grid-container a img {
+        width: 80vw;
+        height: auto;
+    }
+
+    .photo-grid-container a img:hover {
+        width: 80vw;
+    }
 }
