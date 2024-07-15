@@ -17,13 +17,12 @@
 
 		<nav id="nav-bar">
 			<!-- <a href="#cover">cover</a> -->
-			<a href="#cover">Home</a>
-			<a href="#skills">Skills</a>
-			<a href="#projects">Projects</a>
-			<a href="#game">Game</a>
-			<a href="#photography">Photography</a>
+			<a href="#cover" onclick="closeMenu()">Home</a>
+			<a href="#skills" onclick="closeMenu()">Skills</a>
+			<a href="#projects" onclick="closeMenu()">Projects</a>
+			<a href="#game" onclick="closeMenu()">Game</a>
 			<a href="https://drive.google.com/file/d/11RP4-dPy5Sdnm7Wr3dbtGonlQTQiL9d5/view?usp=sharing" target="_blank">Resume</a>
-			<a href="#contact-me">Contact Me</a>
+			<a href="#contact-me" onclick="closeMenu()">Contact Me</a>
 			<a href="javascript:void(0);" class="burger-menu-icon" onclick="expandMenu()">
 				<img src="img/burger-menu-icon.svg" alt="Expand navigation menu choices"/>
 			</a>
@@ -43,79 +42,185 @@
 				</div>
 
 				<div>
-					<div class="grid-container">
+					<!-- This grid keeps going over the navbar and I have no clue why. -->
+					<div class="grid-container hobby-grid">
 						<div class="hobbies-grid-container">
 
-							<div class="hobby-videoGame-item hobby-grid-item">
+							<div class="hobby-videoGame-item hobby-grid-item" data-content-class="hobby-videoGame">
 								<!-- List of games that I have been playing from steam or just list of games -->
-								<h2>Video Games</h2>
+								<h2 class="hobby-h2-title">Video Games</h2>
 							</div>
 
-							<div class="hobby-pc-item hobby-grid-item">
+							<div class="hobby-pc-item hobby-grid-item" data-content-class="hobby-pc">
 								<!-- I will come up with some text and experience -->
-								<h2>Computers</h2>
+								<h2 class="hobby-h2-title">Computers</h2>
 							</div>
 
-							<div class="hobby-tech-item hobby-grid-item">
+							<div class="hobby-tech-item hobby-grid-item" data-content-class="hobby-tech">
 								<!-- Probably be mostly just text and some stuff I use -->
-								<h2>Technology</h2>
+								<h2 class="hobby-h2-title">Technology</h2>
 							</div>
 
-							<div class="hobby-car-item hobby-grid-item">
+							<div class="hobby-car-item hobby-grid-item" data-content-class="hobby-car">
 								<!-- Here it will mostly just be a card with text and some images -->
-								<h2>Cars</h2>
+								<h2 class="hobby-h2-title">Cars</h2>
 							</div>
 
-							<div class="hobby-eng-item hobby-grid-item">
+							<div class="hobby-eng-item hobby-grid-item" data-content-class="hobby-eng">
 								<!-- Just some text to provide additional information -->
-								<h2>Engineering</h2>
+								<h2 class="hobby-h2-title">Engineering</h2>
 							</div>
 
-							<div class="hobby-tp-item hobby-grid-item">
+							<div class="hobby-tp-item hobby-grid-item" data-content-class="hobby-tp">
 								<!-- Just text here as well -->
-								<h2>Theme Parks</h2>
+								<h2 class="hobby-h2-title">Theme Parks</h2>
 							</div>
 
-							<div class="hobby-coaster-item hobby-grid-item">
+							<div class="hobby-coaster-item hobby-grid-item" data-content-class="hobby-coaster">
 								<!-- Just some text and images -->
-								<h2>Roller Coasters</h2>
+								<h2 class="hobby-h2-title">Roller Coasters</h2>
 							</div>
 
-							<div class="hobby-photo-item hobby-grid-item">
+							<div class="hobby-photo-item hobby-grid-item" data-content-class="hobby-photo">
 								<!-- The photgraphy section from below -->
-								<h2>Photography</h2>
+								<h2 class="hobby-h2-title">Photography</h2>
 							</div>
 
-							<div class="hobby-wo-item hobby-grid-item">
+							<div class="hobby-wo-item hobby-grid-item" data-content-class="hobby-wo">
 								<!-- Just some text -->
-								<h2>Working out</h2>
+								<h2 class="hobby-h2-title">Working out</h2>
 							</div>
 
-							<div class="hobby-bike-item hobby-grid-item">
+							<div class="hobby-bike-item hobby-grid-item" data-content-class="hobby-bike">
 								<!-- Just some text -->
-								<h2>Bikes</h2>
+								<h2 class="hobby-h2-title">Bikes</h2>
 							</div>
 
-							<div class="hobby-music-item hobby-grid-item">
+							<div class="hobby-music-item hobby-grid-item" data-content-class="hobby-music">
 								<!-- Just Some text -->
-								<h2>Music</h2>
+								<h2 class="hobby-h2-title">Music</h2>
 							</div>
 
-							<div class="hobby-aviation-item hobby-grid-item">
+							<div class="hobby-aviation-item hobby-grid-item" data-content-class="hobby-aviation">
 								<!-- Just Some text -->
-								<h2>Aviation</h2>
+								<h2 class="hobby-h2-title">Aviation</h2>
 							</div>
 
-							<div class="hobby-main-item hobby-grid-item">
-								<a href="javascript:void(0);">
-									<p class="hobby-title-center">Hobbies</p>
-									<!-- <p>I'm all about investing time in the things I love doing, and I'm always up for meeting new people and expanding my knowledge. I'm keen on learning more about my current hobbies and maybe even picking up a few new ones along the way.</p> -->
-								</a>
+							<div class="hobby-main-item hobby-grid-item" data-content-class="hobby-main">
+								<p class="hobby-title-center">Hobbies</p>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				<div class="card-content">
+
+					<div class="hobby-videoGame">
+						<h3>Video Games</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-pc">
+						<h3>Computers</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-tech">
+						<h3>Technology</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-car">
+						<h3>Cars</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-eng">
+						<h3>Engineering</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-tp">
+						<h3>Theme Parks</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-coaster">
+						<h3>Roller Coasters</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-photo">
+						<h3>Photography</h3>
+						<div>
+							<p>Photography has always been fun to me. I remember having to make sure I really wanted to take a picture because I only had a limited amount of film. Today, I just take pictures of a wide range of things never thinking twice other than what the shot will look like when I want to make sure I have a good picture. I've lately been taking pictures of cars and bikes for my Instagram</p>
+
+							<div class="grid-container">
+								<div class="photo-grid-container">
+									<a href="javascript:void(0);">
+										<img src="img/photography/lambofront.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/765LTMSO.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/crb600rr1.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/minicooperscountryman1.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/mustang1.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/porsche918front.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/porsche1.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/mustang2.jpg" alt="">
+									</a>
+									<a href="javascript:void(0);">
+										<img src="img/photography/porsche911gt3rs1.jpg" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hobby-wo">
+						<h3>Working Out</h3>
+						<div>I love hanging at the gym and learning how to workout. I haven't been able to go regularly for more than 3 months at a time. It's not because I don't want to, it’s just that I either get too busy with other work or I am moving and signing up for a membership for a few months is a hassle. Despite that, whenever I do make it to the gym, it's a blast. I would enjoy finding someone to be my gym buddy.</div>
+					</div>
+
+					<div class="hobby-bike">
+						<h3>Bikes</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-music">
+						<h3>Music</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-aviation">
+						<h3>Aviation</h3>
+						<div>Lorem Ipsum</div>
+					</div>
+
+					<div class="hobby-main">
+						<h3>Hobbies</h3>
+						<div>
+							<p>I'm all about investing time in the things I love doing, and I'm always up for meeting new people and expanding my knowledge. I'm keen on learning more about my current hobbies and maybe even picking up a few new ones along the way.</p>
+						</div>
+					</div>
+
+				</div>
+
 			</div>
+
+
 		</section>
 
 		<section id="skills">skills</section>
@@ -129,50 +234,6 @@
 			game
 		</section>
 
-		<section id="photography">
-			<!-- I want this section to basically just include my Instagram on cars -->
-			<h2>Photography</h2>
-
-			<div class="content-container">
-				<p>Photography has always been fun to me. I remember having to make sure I really wanted to take a picture because I only had a limited amount of film. Today, I just take pictures of a wide range of things never thinking twice other than what the shot will look like when I want to make sure I have a good picture. I've lately been taking pictures of cars and bikes for my Instagram</p>
-
-				
-				<div class="grid-container">
-					<div class="photo-grid-container">
-						<a href="javascript:void(0);">
-							<img src="img/photography/lambofront.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/765LTMSO.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/crb600rr1.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/minicooperscountryman1.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/mustang1.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/porsche918front.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/porsche1.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/mustang2.jpg" alt="">
-						</a>
-						<a href="javascript:void(0);">
-							<img src="img/photography/porsche911gt3rs1.jpg" alt="">
-						</a>
-					</div>
-				</div>
-			
-			</div>
-
-		</section>
-
 		<section id="contact-me">contact</section>
 
 	</div>
@@ -181,12 +242,67 @@
 		Pop Over
 	</div> -->
 
+	<div id="modal" class="modal">
+		<div class="close">X</div>
+		<div class="content"></div>
+	</div>
+
 	<script>
+		const $nav = document.getElementById('nav-bar');
+		const $modal = document.getElementById('modal');
+		const $modalContent = $modal.querySelector('.content');
+		const $modalClose = $modal.querySelector('.close');
+
 		const expandMenu = 	() => {
-			const $nav = document.getElementById('nav-bar');
-			console.log($nav.className);
+			if ($nav.className !== 'expanded-menu') {
+				$modal.classList.remove('open');
+			}
 			$nav.className = !$nav.className ? 'expanded-menu' : '';
 		};
+
+		const closeMenu = () => {
+			$nav.classList.remove('expanded-menu');
+		};
+
+
+
+		const hobbyContent = [...document.body.querySelectorAll('.card-content > div')];
+		const hobbyContentByName = hobbyContent.reduce((map, $el) => ({
+			...map,
+			[$el.className]: $el
+		}), {});
+
+		const hobbyCards = [...document.body.querySelectorAll('.hobbies-grid-container .hobby-grid-item')];
+		console.log(hobbyCards);
+		hobbyCards.forEach($el => {
+			$el.addEventListener('click', e => {
+				const { top, left, width, height } = $el.getClientRects()[0];
+
+				$modal.classList.add('skip-transition')
+
+				Object.assign($modal.style, {
+					top: top + 'px',
+					left: left + 'px',
+					width: width + 'px',
+					height: height + 'px'
+				});
+				
+
+				$modalContent.innerHTML = '';
+				$modalContent.append(hobbyContentByName[$el.dataset.contentClass]);
+				console.log(hobbyContentByName[$el.dataset.contentClass]);
+
+				requestAnimationFrame(() => {
+					$modal.classList.remove('skip-transition');
+					$modal.classList.add('open');
+				});
+			});
+		});
+
+		$modalClose.addEventListener('click', () => {
+			$modal.classList.remove('open');
+		});
+
 	</script>
 
 </body>

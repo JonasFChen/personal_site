@@ -47,6 +47,7 @@ nav {
     overflow: hidden;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 }
 
 nav a {
@@ -69,7 +70,9 @@ nav a:hover {
 }
 
 .content-container {
-    padding: 3rem 7rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .grid-container {
@@ -143,7 +146,7 @@ nav a:hover {
     "mu mu mu cr cr av"
     "ph ph ph cr cr av";
 
-    gap: 10px;
+    gap: 18px;
 }
 
 .hobby-grid-item {
@@ -153,25 +156,27 @@ nav a:hover {
     border-radius: 20px;
     padding: 20px;
 
-    transition: 2s;
+    transition: 0.6s;
 
     align-items: center;
     justify-content: center;;
 }
 
-.hobby-grid-item a {
-    color: black;
-    text-decoration: none;
-}
+.hobby-grid-item:hover {
+    transform: scale(1.04);
+    z-index: 2;
+    cursor: pointer;
 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
 
 .hobby-main-item {
     background-color:rgb(0, 173, 231);
 }
 
-.hobby-main-item a p{
+.hobby-main-item p{
     color: white;
-    font-weight: 600;
+    font-weight: 600px;
 }
 
 .hobby-title-center {
@@ -180,163 +185,97 @@ nav a:hover {
     font-size: 4rem;
 }
 
-.hobby-car-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/photography/lambofront.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.hobby-car-item h2 {
+.hobby-h2-title {
     color: white;
     font-weight: 600;
     font-size: 2rem;
+}
+
+.hobby-car-item {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/photography/lambofront.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hobby-videoGame-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/video-game-background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/video-game-background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-videoGame-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-coaster-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/rollercoaster_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/rollercoaster_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-coaster-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-bike-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/bike_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/bike_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-bike-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-tech-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/technology_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/technology_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-tech-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-pc-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/computer_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/computer_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-pc-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-eng-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/eng-background.jpeg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/eng-background.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-eng-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-tp-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/tp_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/tp_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-tp-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-photo-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/photo_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/photo_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-photo-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-wo-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/gym_background.png);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/gym_background.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-wo-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-music-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img//backgrounds/music_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img//backgrounds/music_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.hobby-music-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
 }
 
 .hobby-aviation-item {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(img/backgrounds/aviation_background.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/backgrounds/aviation_background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.hobby-aviation-item h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
-}
-
-.pop-over {
+/* .pop-over {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -347,6 +286,50 @@ nav a:hover {
     padding: 50px;
     background: rgb(210, 210, 210);
     border-radius: 20px;
+} */
+
+.modal {
+    background-color: rgb(231, 231, 231);
+    position: fixed;
+
+    pointer-events: none;
+    border-radius: 20px;
+    overflow: hidden;
+    visibility: hidden;
+    box-sizing: border-box;
+    padding: 40px;
+    transition: all 0.5s;
+}
+
+.modal.skip-transition {
+    transition: none;
+}
+
+.modal.open {
+    visibility: visible;
+    top: 50% !important;
+    left: 50% !important;
+    width: 900px !important;
+    height: 80vh !important;
+    max-height: 800px !important;
+    background-color: rgb(231, 231, 231);
+    pointer-events: all;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    overflow-y: auto;
+}
+
+.modal .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card-content {
+    display: none;
 }
 
 
@@ -398,5 +381,38 @@ nav a:hover {
 
     .photo-grid-container a img:hover {
         width: 80vw;
+    }
+
+    .hobbies-grid-container {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+        "ho ho"
+        "wo pc"
+        "vd tc"
+        "en bk"
+        "tp rc"
+        "cr av"
+        "mu ph";
+    }
+
+    .modal.open {
+        visibility: visible;
+        top: 50% !important;
+        left: 50% !important;
+        width: 97vw !important;
+        height: 85vh !important;
+        background-color: rgb(231, 231, 231);
+        pointer-events: all;
+        border-radius: 20px;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .hobby-h2-title {
+        font-size: 1.4rem;
     }
 }
