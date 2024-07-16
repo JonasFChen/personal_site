@@ -423,7 +423,7 @@ nav a:hover {
 
     .modal.open .container {
         width: 97vw !important;
-        height: calc(90vh - var(--nav-height)) !important;
+        height: calc(87vh - var(--nav-height)) !important;
         z-index: 1000;
     }
 }
