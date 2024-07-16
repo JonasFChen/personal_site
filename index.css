@@ -24,6 +24,10 @@ h3 {
     padding: 20px 0;
 }
 
+p {
+    line-height: 1.4;
+}
+
 section {
     min-height: 100vh;
     scroll-margin-top: 58px;  /* Use the height of the nav */
@@ -401,11 +405,11 @@ nav a:hover {
         visibility: visible;
         top: 50% !important;
         left: 50% !important;
-        width: 97vw !important;
-        height: 85vh !important;
+        width: 100vw !important;
+        height: 100dvh !important;
         background-color: rgb(231, 231, 231);
         pointer-events: all;
-        border-radius: 20px;
+        border-radius: 0px;
         transform: translate(-50%, -50%);
         z-index: 1000;
     }
