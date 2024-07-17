@@ -31,7 +31,7 @@ h3 {
 }
 
 p {
-    line-height: 1.4;
+    line-height: 1.7;
 }
 
 section {
@@ -44,10 +44,11 @@ section:nth-child(1) { background: red;}
 section:nth-child(2) { background: var(--blue);}
 section:nth-child(3) { background: rgb(250, 250, 250);}
 section:nth-child(4) { background: green;}
-section:nth-child(5) { background: purple;}
+section:nth-child(5) { background: rgb(250, 250, 250);}
 section:nth-child(6) { background: greenyellow;}
 section:nth-child(7) { background: rgb(250, 250, 250);}
 
+/* On desktop navbar can overlat */
 nav {
     display: flex;
     position: sticky;
@@ -57,7 +58,7 @@ nav {
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 500;
 }
 
 nav a {
@@ -170,13 +171,15 @@ nav a:hover {
 
     align-items: center;
     justify-content: center;;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .hobby-grid-item:hover {
     transform: scale(1.04);
     cursor: pointer;
 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.59)
 }
 
 .hobby-main-item {
@@ -199,6 +202,9 @@ nav a:hover {
     font-weight: 600;
     font-size: 2rem;
 }
+
+/* ___________________________________________________________ */
+/* Hobby Card Images. There has to be a better way */
 
 .hobby-car-item {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(img/photography/lambofront.jpg);
@@ -284,18 +290,7 @@ nav a:hover {
     background-repeat: no-repeat;
 }
 
-/* .pop-over {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    height: 800px;
-    width: 800px;
-    padding: 50px;
-    background: rgb(210, 210, 210);
-    border-radius: 20px;
-} */
+/* ___________________________________________________________ */
 
 .modal {
     visibility: hidden;
@@ -340,11 +335,12 @@ nav a:hover {
     width: 900px !important;
     height: 80vh !important;
     max-height: 800px !important;
+    max-width: 97vw !important;
     background-color: rgb(231, 231, 231);
     pointer-events: all;
     border-radius: 20px;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 1000;
     overflow-y: auto;
 }
 
@@ -360,8 +356,130 @@ nav a:hover {
     display: none;
 }
 
+.centered-text {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: masonry;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card {
+    margin: 30px;
+
+    width: 350px;
+    max-width: 29dvw;
+
+    border-radius: 20px;
+    background-color: rgb(230, 230, 230);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.project-card h3 {
+    margin: 0;
+    padding: 0 0 0px 5px;
+}
+
+.sub-header-project-card {
+    margin: 0;
+    padding: 0 0 0 5px;
+
+    font-size: 0.9rem;
+    color:#424242;
+    font-weight: 400;
+}
+
+.card-description {
+    padding: 5px;
+}
+
+.project-card-image {
+    background-image: url("/img/space.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 250px;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-info-container {
+    height: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+    margin: 15px 20px 20px 20px;
+}
+
+.label-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.label > p {
+    padding: 3px 10px;
+    margin: 3px;
+
+    border: 1px solid black;
+    border-radius: 14px;
+
+    font-size: 0.75rem;
+}
+
+.project-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.project-buttons > a {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: 1px solid #60acef;
+    background-color: #60acef;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.13rem;
+    transition: 0.4s;
+}
+
+.project-buttons > a:hover {
+    border: 1px solid #3da3fd;
+    background-color: #3da3fd;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
 
 /* All mobile CSS goes in here */
+@media screen and (max-width: 1300px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .project-card {
+        width: 350px;
+        max-width: 40dvw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .hobby-h2-title {
+        font-size: 1.4rem;
+    }
+}
+
 @media screen and (max-width: 826px) {
     nav a {
         display: none;
@@ -417,23 +535,32 @@ nav a:hover {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas:
         "ho ho"
-        "wo pc"
-        "vd tc"
-        "en bk"
-        "tp rc"
-        "cr av"
-        "mu ph";
+        "wo av"
+        "tc tc"
+        "pc en"
+        "vd ph"
+        "vd cr"
+        "rc cr"
+        "tp bk"
+        "mu mu";
+    }
+
+    .card-container {
+        grid-template-columns: auto;
+    }
+
+    .project-card {
+        width: 350px;
+        max-width: 90vw;
+    }
+
+    .card-info-container {
+        height: auto;
     }
 
     .modal.open .container {
         width: 97vw !important;
         height: calc(87vh - var(--nav-height)) !important;
         z-index: 1000;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .hobby-h2-title {
-        font-size: 1.4rem;
     }
 }
